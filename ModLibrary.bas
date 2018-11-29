@@ -1,4 +1,4 @@
-Attribute VB_Name = "Library"
+Attribute VB_Name = "ModLibrary"
 Option Explicit
 
 Public Function ConvertHoursIntoDecimal(TimeIn As Date)
@@ -78,3 +78,7 @@ Function dhDaysInMonth(Optional dtmDate As Date = 0) As Integer
      DateSerial(Year(dtmDate), Month(dtmDate), 1)
 End Function
 
+Public Function ConvStnNotoID(StationNo As Integer) As String
+    ConvStnNotoID = "EC" & CStr(Format(StationNo, "00"))
+
+End Function

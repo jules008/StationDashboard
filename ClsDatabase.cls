@@ -93,7 +93,7 @@ errorhandler:
     If Err.Number = 3044 Then
         MsgBox "Database not found, please update location"
         DBConnect
-        Main.Initialise
+        ModMain.Initialise
     End If
 End Sub
 

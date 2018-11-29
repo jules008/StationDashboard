@@ -2,7 +2,7 @@ VERSION 1.0 CLASS
 BEGIN
   MultiUse = -1  'True
 END
-Attribute VB_Name = "StationDetail"
+Attribute VB_Name = "ShtStationDetail"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -24,7 +24,7 @@ Enum PencilGraphType
 End Enum
 
 Private Sub CommandButton1_Click()
-    Main.Initialise
+    ModMain.Initialise
 
 End Sub
 
@@ -129,7 +129,7 @@ Private Sub Worksheet_Activate()
     
     UpdateAvailGraphic
     
-    CrewData.GetCrewData
+    ShtCrewData.GetCrewData
     
     Set PencilGraphs = New ClsPencilGraphics
     Set PencilGraph1 = New ClsPencilGraphic
@@ -190,7 +190,7 @@ Private Sub Worksheet_SelectionChange(ByVal Target As Range)
         End With
         UpdateAvailGraphic
         UpdatePencilGraphic
-        CrewData.GetCrewData
+        ShtCrewData.GetCrewData
         Range("A1").Select
  
     End If
@@ -201,7 +201,7 @@ Private Sub Worksheet_SelectionChange(ByVal Target As Range)
         End With
         UpdateAvailGraphic
         UpdatePencilGraphic
-        CrewData.GetCrewData
+        ShtCrewData.GetCrewData
         Range("A1").Select
     End If
     
@@ -215,7 +215,7 @@ Private Sub Worksheet_SelectionChange(ByVal Target As Range)
             Range("StationNo") = StationNo
             UpdateAvailGraphic
             UpdatePencilGraphic
-            CrewData.GetCrewData
+            ShtCrewData.GetCrewData
         End If
         
         Range("A1").Select
@@ -231,7 +231,7 @@ Private Sub Worksheet_SelectionChange(ByVal Target As Range)
             Range("StationNo") = StationNo
             UpdateAvailGraphic
             UpdatePencilGraphic
-            CrewData.GetCrewData
+            ShtCrewData.GetCrewData
         End If
         Range("A1").Select
         
@@ -471,3 +471,4 @@ Public Function GetStartDay() As Integer
     GetStartDay = StartDay
     
 End Function
+

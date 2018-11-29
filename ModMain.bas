@@ -1,11 +1,11 @@
-Attribute VB_Name = "Main"
+Attribute VB_Name = "ModMain"
 Option Explicit
 
 
 Public Sub Initialise()
     Set DBase = New ClsDatabase
-    Library.PerfSettingsOff
-    Summary.InitialiseArrows
+    ModLibrary.PerfSettingsOff
+    ShtSummary.InitialiseArrows
     Application.Worksheets(1).Activate
 End Sub
 

@@ -61,6 +61,7 @@ Public SYS_PATH As String
 ' ===============================================================
 ' Global Class Declarations
 ' ---------------------------------------------------------------
+Public DBase As ClsDatabase
 
 ' ---------------------------------------------------------------
 ' Others
@@ -73,7 +74,17 @@ Public SYS_PATH As String
 ' ===============================================================
 ' Enum Declarations
 ' ---------------------------------------------------------------
+Enum Direction
+    DirUp = 1
+    DirDown = 2
+End Enum
 
+Enum DataCol
+    ArwDivision = 1
+    ArwStation = 2
+    ArwAvailability = 3
+    ArwEfficiency = 4
+End Enum
 
 ' ===============================================================
 ' Type Declarations

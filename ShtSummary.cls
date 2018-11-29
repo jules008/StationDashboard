@@ -2,12 +2,13 @@ VERSION 1.0 CLASS
 BEGIN
   MultiUse = -1  'True
 END
-Attribute VB_Name = "Summary"
+Attribute VB_Name = "ShtSummary"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = True
 Option Explicit
+
 Dim LastClick As Date
 Dim FirstSort As ClsArrow
 Dim SecondSort As ClsArrow
@@ -21,12 +22,12 @@ Dim StrFirstSort As String
 Dim StrSecondSort As String
 
 Private Sub BtnConnectDB_Click()
-    Main.Initialise
+    ModMain.Initialise
     DBase.DBConnect
 End Sub
 
 Private Sub BtnReset_Click()
-    Main.Initialise
+    ModMain.Initialise
 End Sub
 
 Private Sub Worksheet_Activate()
@@ -323,3 +324,4 @@ Public Sub TerminateArrows()
     Set ArrowEfficiency = Nothing
 
 End Sub
+

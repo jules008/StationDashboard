@@ -2,12 +2,11 @@ VERSION 1.0 CLASS
 BEGIN
   MultiUse = -1  'True
 END
-Attribute VB_Name = "StationData"
+Attribute VB_Name = "ShtStationData"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = True
-
 Option Explicit
 
 Public Sub GetAvailability(Month As Integer, Data_2 As Boolean, Data_1 As Boolean, Data As Boolean, Data1 As Boolean, Order As String)
@@ -102,7 +101,7 @@ Public Sub GetAvailability(Month As Integer, Data_2 As Boolean, Data_1 As Boolea
     
     
     'get number of days in month
-    Summary.Range("NoDays") = Library.dhDaysInMonth(Summary.Range("U5"))
+    Summary.Range("NoDays") = ModLibrary.dhDaysInMonth(Summary.Range("U5"))
     
     'close down
     Set RecSet = Nothing
@@ -223,6 +222,7 @@ Public Function PrevMonth(MonthNum As Integer, MinVal As Integer, MaxVal As Inte
     End Select
     PrevMonth = MonthNum
 End Function
+
 
 
 
