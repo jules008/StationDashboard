@@ -101,7 +101,7 @@ Public Sub GetAvailability(Month As Integer, Data_2 As Boolean, Data_1 As Boolea
     
     
     'get number of days in month
-    Summary.Range("NoDays") = ModLibrary.dhDaysInMonth(Summary.Range("U5"))
+    ShtSummary.Range("NoDays") = ModLibrary.dhDaysInMonth(ShtSummary.Range("U5"))
     
     'close down
     Set RecSet = Nothing
@@ -141,7 +141,7 @@ Public Function NextMonth(MonthNum As Integer, MinVal As Integer, MaxVal As Inte
             Data1Range.ClearContents
             
             'get remaining data
-            GetAvailability MonthNum, False, False, False, False, Summary.Range("orderBy")
+            GetAvailability MonthNum, False, False, False, False, ShtSummary.Range("orderBy")
                  
         Case Else
             'increment month no
@@ -153,7 +153,7 @@ Public Function NextMonth(MonthNum As Integer, MinVal As Integer, MaxVal As Inte
             DataRange.Value = Data1Range.Value
             
             'get remaining data
-            GetAvailability MonthNum, False, False, False, True, Summary.Range("orderBy")
+            GetAvailability MonthNum, False, False, False, True, ShtSummary.Range("orderBy")
             
     End Select
        
@@ -191,7 +191,7 @@ Public Function PrevMonth(MonthNum As Integer, MinVal As Integer, MaxVal As Inte
             Data_1Range.ClearContents
            
             'get remaining data
-            GetAvailability MonthNum, False, False, True, False, Summary.Range("orderBy")
+            GetAvailability MonthNum, False, False, True, False, ShtSummary.Range("orderBy")
         
         Case Is = MinVal + 2
             'decrement month no
@@ -206,7 +206,7 @@ Public Function PrevMonth(MonthNum As Integer, MinVal As Integer, MaxVal As Inte
             Data_2Range.ClearContents
             
             'get remaining data
-            GetAvailability MonthNum, False, False, False, False, Summary.Range("orderBy")
+            GetAvailability MonthNum, False, False, False, False, ShtSummary.Range("orderBy")
      
         Case Else
             'decrement month no
@@ -218,7 +218,7 @@ Public Function PrevMonth(MonthNum As Integer, MinVal As Integer, MaxVal As Inte
             Data_1Range.Value = Data_2Range.Value
             
             'get remaining data
-            GetAvailability MonthNum, True, False, False, False, Summary.Range("orderBy")
+            GetAvailability MonthNum, True, False, False, False, ShtSummary.Range("orderBy")
     End Select
     PrevMonth = MonthNum
 End Function

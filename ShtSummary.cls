@@ -54,7 +54,7 @@ Private Sub Worksheet_Activate()
 '    Range("MonthNum") = Range("MaxVal")
     
     'update all data tables
-    StationData.GetAvailability Range("MonthNum"), True, True, True, True, [orderby]
+    ShtStationData.GetAvailability Range("MonthNum"), True, True, True, True, [orderby]
     
     'update values
     UpdateSheet
@@ -90,13 +90,13 @@ Private Sub Worksheet_SelectionChange(ByVal Target As Range)
     
     'prev Month
     If Target.Address = "$V$4" Then
-        Range("MonthNum") = StationData.PrevMonth(Range("MonthNum"), Range("MinVal"), Range("MaxVal"))
+        Range("MonthNum") = ShtStationData.PrevMonth(Range("MonthNum"), Range("MinVal"), Range("MaxVal"))
         UpdateSheet
     End If
     
     'Next Month
     If Target.Address = "$Y$4" Then
-        Range("MonthNum") = StationData.NextMonth(Range("MonthNum"), Range("MinVal"), Range("MaxVal"))
+        Range("MonthNum") = ShtStationData.NextMonth(Range("MonthNum"), Range("MinVal"), Range("MaxVal"))
         UpdateSheet
     End If
     
@@ -170,7 +170,7 @@ Public Sub UpdateSheet()
         InfoGraphic.UpdateGraph i, Efficiency, Availability, Target
     Next
     
-    Summary.Range("A1").Select
+    ShtSummary.Range("A1").Select
     
     Set DataSheet = Nothing
     Set StationLookUp = Nothing
@@ -264,7 +264,7 @@ Public Sub DataSort(SortBy As DataCol, Optional SortAsc As Boolean)
     
     [orderby] = StrFirstSort & StrSecondSort
     
-    StationData.GetAvailability Range("MonthNum"), True, True, True, True, [orderby]
+    ShtStationData.GetAvailability Range("MonthNum"), True, True, True, True, [orderby]
     UpdateSheet
     LastClick = Now
     Debug.Print

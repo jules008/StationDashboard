@@ -321,7 +321,7 @@ Private Function GetData(MonthNo As Integer, StationNo As Integer, DateNo As Int
     Dim i As Integer
     Dim DataArray(1 To 48) As Variant
     
-    StationID = "'" & ModGlobals.ConvStnNotoID([StationNo]) & "'"
+    StationID = "'" & ModLibrary.ConvStnNotoID([StationNo]) & "'"
     
     Select Case DataType
         Case Is = PencilGraphType.NoCrew

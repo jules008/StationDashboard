@@ -185,8 +185,8 @@ Private Sub Worksheet_SelectionChange(ByVal Target As Range)
     If Target.Address = "$P$1" Then
         
         'next month
-        With Summary
-            .Range("MonthNum").Value = StationData.NextMonth(.Range("MonthNum"), .Range("MinVal"), .Range("MaxVal"))
+        With ShtSummary
+            .Range("MonthNum").Value = ShtStationData.NextMonth(.Range("MonthNum"), .Range("MinVal"), .Range("MaxVal"))
         End With
         UpdateAvailGraphic
         UpdatePencilGraphic
@@ -196,8 +196,8 @@ Private Sub Worksheet_SelectionChange(ByVal Target As Range)
     End If
     
     If Target.Address = "$M$1" Then
-        With Summary
-            .Range("MonthNum").Value = StationData.PrevMonth(.Range("MonthNum"), .Range("MinVal"), .Range("MaxVal"))
+        With ShtSummary
+            .Range("MonthNum").Value = ShtStationData.PrevMonth(.Range("MonthNum"), .Range("MinVal"), .Range("MaxVal"))
         End With
         UpdateAvailGraphic
         UpdatePencilGraphic
@@ -460,7 +460,7 @@ End Sub
 Public Function GetStartDay() As Integer
     Dim StartDay As Integer
     
-    StartDay = Summary.Range("StartDay")
+    StartDay = ShtSummary.Range("StartDay")
     
     If StartDay > 1 Then
         StartDay = 2 - StartDay
